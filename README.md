@@ -513,9 +513,55 @@ Run a trained policy in the simulation environment and automatically record resu
 ## My apporch
 - [ ] Use VLM/VLA to generate trajectory data
   - Give the task video and keyboard control rules to VLM/VLA as the basic task information
-  - Start the simulation, obtain scene image(@10Hz maybe) and give it to VLM/VLA to update the control command
+  - Start the simulation, obtain scene image(need a image capture program, @10Hz maybe) and give it to VLM/VLA to update the control command
   - Feed the command back to the simulation(need a key sending program)
   - Obtain scene image(@10Hz maybe) and give it to VLM/VLA to update the control command, and also try to refine the VLM/VLA
+  - REF 1： Possible prompt
+    <details>
+    ## Keyboard Controls
+
+    **End-effector translation (hold to move continuously)**
+
+    | Key   | Action                                   |
+    | ----- | ---------------------------------------- |
+    | `1` | Move end-effector in +X direction        |
+    | `3` | Move end-effector in -X direction        |
+    | `4` | Move end-effector in +Y direction        |
+    | `6` | Move end-effector in -Y direction        |
+    | `7` | Move end-effector in +Z direction (up)   |
+    | `9` | Move end-effector in -Z direction (down) |
+
+    **End-effector rotation (hold to rotate continuously)**
+
+    | Key   | Action                          |
+    | ----- | ------------------------------- |
+    | `y` | Rotate around X-axis (positive) |
+    | `u` | Rotate around X-axis (negative) |
+    | `v` | Rotate around Y-axis (positive) |
+    | `b` | Rotate around Y-axis (negative) |
+    | `n` | Rotate around Z-axis (positive) |
+    | `m` | Rotate around Z-axis (negative) |
+
+    **Gripper control**
+
+    | Key   | Action        |
+    | ----- | ------------- |
+    | `k` | Open gripper  |
+    | `l` | Close gripper |
+
+    **System controls**
+
+    | Key           | Action                                                   |
+    | ------------- | -------------------------------------------------------- |
+    | `o`         | Switch active arm (left ↔ right)                        |
+    | `0`         | Toggle single-arm / dual-arm sync mode                   |
+    | `2`         | Toggle gripper mode (position control ↔ torque control) |
+    | `+` / `=` | Increase movement speed level                            |
+    | `-`         | Decrease movement speed level                            |
+    | `q`         | Quit teleoperation                                       |
+
+    按照以上的机械臂Keyboard Controls Rules和参考动作视频，生成机器人的机械臂从视频的初始姿态到最终姿态的键盘控制命令序列
+    </details>
 
 ---
 
