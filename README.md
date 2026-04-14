@@ -90,7 +90,9 @@ The project uses Docker. Start from the repository root:
 ```bash
 chmod +x run.sh
 
-# Possible issue(Unable to find image 'isaacsim5.1_lerobot5.1:v0' locally): how to fix？
+# Possible issue 1(Unable to find image 'isaacsim5.1_lerobot5.1:v0' locally): docker build -t isaacsim5.1_lerobot5.1:v0 .
+# Possible issue 2(docker: Error response from daemon: failed to discover GPU vendor from CDI: no known GPU vendor found): install NVIDIA Container Toolkit
+# Tip1(line 103-106): script automatically removes the old stopped container and creates a new one
 sudo ./run.sh
 ```
 
