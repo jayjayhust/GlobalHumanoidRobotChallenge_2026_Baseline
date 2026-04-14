@@ -54,10 +54,12 @@ git submodule update --init --recursive
 # huggingface-cli download UBTECH-Robotics/challenge2026_assets --local-dir ./assets --repo-type model
 
 # Training datasets
-huggingface-cli download UBTECH-Robotics/challenge2026_dataset --local-dir ./datasets --repo-type dataset
+# huggingface-cli download UBTECH-Robotics/challenge2026_dataset --local-dir ./datasets --repo-type dataset
+hf download UBTECH-Robotics/challenge2026_dataset --local-dir ./datasets --repo-type dataset
 
 # Pretrained weights
-huggingface-cli download UBTECH-Robotics/challenge2026_baseline --local-dir ./challenge2026_baseline --repo-type model
+# huggingface-cli download UBTECH-Robotics/challenge2026_baseline --local-dir ./challenge2026_baseline --repo-type model
+hf download UBTECH-Robotics/challenge2026_baseline --local-dir ./challenge2026_baseline --repo-type model
 ```
 
 ---
