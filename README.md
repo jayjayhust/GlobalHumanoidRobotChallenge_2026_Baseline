@@ -47,6 +47,7 @@ Large artifacts are hosted on Hugging Face. Download them before use:
 pip install huggingface-hub
 
 # Simulation assets (recommended: init submodule)
+# Possible issue(git@hf.co: Permission denied (publickey)): need to gen ssh key on your pc and add it to hf
 git submodule update --init --recursive
 
 # Or download directly into ./assets
