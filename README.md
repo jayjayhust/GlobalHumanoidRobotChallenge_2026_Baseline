@@ -89,6 +89,8 @@ The project uses Docker. Start from the repository root:
 
 ```bash
 chmod +x run.sh
+
+# Possible issue(Unable to find image 'isaacsim5.1_lerobot5.1:v0' locally): how to fix？
 sudo ./run.sh
 ```
 
