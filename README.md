@@ -510,6 +510,15 @@ Run a trained policy in the simulation environment and automatically record resu
 
 ---
 
+## My apporch
+- [ ] Use VLM/VLA to generate trajectory data
+  - Give the task video and keyboard control rules to VLM/VLA as the basic task information
+  - Start the simulation, obtain scene image(@10Hz maybe) and give it to VLM/VLA to update the control command
+  - Feed the command back to the simulation(need a key sending program)
+  - Obtain scene image(@10Hz maybe) and give it to VLM/VLA to update the control command, and also try to refine the VLM/VLA
+
+---
+
 ## Repository Layout
 
 ```
