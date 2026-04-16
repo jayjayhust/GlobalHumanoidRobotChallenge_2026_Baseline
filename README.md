@@ -132,6 +132,10 @@ HOST_WORKSPACE=/my/project/path ./run.sh
 Inside the container (default workspace: `/workspace/GlobalHumanoidRobotChallenge2026_Baseline`):
 
 ```bash
+# Task 1: Part_Sorting
+# Task 2: Conveyor_Sorting
+# Task 3: Foam_Inlaying
+# Task 4: Packing_Box
 /isaac-sim/python.sh lerobot/scripts/control_robot.py \
     --robot.type=walker_s2_sim \
     --control.type=teleoperate \
@@ -195,6 +199,29 @@ Inside the container (default workspace: `/workspace/GlobalHumanoidRobotChalleng
 ### 3. Data collection
 
 ```bash
+# Task 1: Part_Sorting
+# Task 2: Conveyor_Sorting
+# Task 3: Foam_Inlaying
+# Task 4: Packing_Box
+/isaac-sim/python.sh lerobot/scripts/control_robot.py \
+    --robot.type=walker_s2_sim \
+    --control.root=/workspace/GlobalHumanoidRobotChallenge2026_Baseline/datasets/Part_Sorting/part_sorting_001 \
+    --control.type=record \
+    --control.task=Part_Sorting \
+    --control.fps=30 \
+    --control.single_task="Part_Sorting" \
+    --control.repo_id=alpha/jay-part_sorting_001 \
+    --control.num_episodes=50 \
+    --control.warmup_time_s=0 \
+    --control.episode_time_s=10000 \
+    --control.reset_time_s=10 \
+    --control.push_to_hub=false \
+    --control.video=true \
+    --control.num_image_writer_threads_per_camera=4 \
+    --control.display_cameras=true \
+    --control.play_sounds=false \
+    --control.resume=false
+
 /isaac-sim/python.sh lerobot/scripts/control_robot.py \
     --robot.type=walker_s2_sim \
     --control.root=/workspace/GlobalHumanoidRobotChallenge2026_Baseline/datasets/task4/v1 \
@@ -228,6 +255,16 @@ Inside the container (default workspace: `/workspace/GlobalHumanoidRobotChalleng
 | `control.push_to_hub`    | Push to Hugging Face Hub     | `false`       |
 | `control.video`          | Record video                 | `true`        |
 | `control.resume`         | Resume interrupted recording | `false`       |
+
+#### Keyboard Controls
+
+| Key     | Action                                   |
+| ------- | ---------------------------------------- |
+| `enter` | Enable control        |
+| `left arrow key '<-'` | Early exit and re-record the current episode        |
+| `right arrow key '->'` | Early exit while recording an episode and start a new episode        |
+| `esc` | Exit       |
+
 
 ### 4. Replay
 
@@ -512,10 +549,10 @@ Run a trained policy in the simulation environment and automatically record resu
 
 ## My apporch
 - [ ] Use VLM/VLA to generate trajectory data
-  - Give the task video and keyboard control rules to VLM/VLA as the basic task information
-  - Start the simulation, obtain scene image(need a image capture program, @10Hz maybe) and give it to VLM/VLA to update the control command
+  - Give the task video and keyboard control rules to VLM/VLA/WMA as the basic task information
+  - Start the simulation, obtain scene image(need a image capture program, @10Hz maybe) and give it to VLM/VLA/WMA to update the control command
   - Feed the command back to the simulation(need a key sending program)
-  - Obtain scene image(@10Hz maybe) and give it to VLM/VLA to update the control command, and also try to refine the VLM/VLA
+  - Obtain scene image(@10Hz maybe) and give it to VLM/VLA/WMA to update the control command, and also try to refine the VLM/VLA/WMA
   - REF 1： Possible prompt
     <details>
     ## Keyboard Controls

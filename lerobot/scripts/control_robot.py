@@ -98,8 +98,8 @@ python lerobot/scripts/control_robot.py \
 ```
 
 **NOTE**: You can use your keyboard to control data recording flow.
-- Tap right arrow key '->' to early exit while recording an episode and go to resseting the environment.
-- Tap right arrow key '->' to early exit while resetting the environment and got to recording the next episode.
+- Tap right arrow key '->' to early exit while recording an episode and go to reseting the environment.
+- Tap right arrow key '->' to early exit while reseting the environment and got to recording the next episode.
 - Tap left arrow key '<-' to early exit and re-record the current episode.
 - Tap escape key 'esc' to stop the data recording.
 This might require a sudo permission to allow your terminal to monitor keyboard events.

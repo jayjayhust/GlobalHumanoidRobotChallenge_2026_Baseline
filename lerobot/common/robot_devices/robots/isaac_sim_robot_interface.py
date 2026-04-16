@@ -210,7 +210,7 @@ class IsaacSimRobotInterface:
             self.initial_joint_positions[global_idx] = arm_initial_values[i]
 
         extra_defaults = {
-            "head_pitch_joint": -0.600945933438922,
+            "head_pitch_joint": -0.785398163,
             "head_yaw_joint": 1.9677590016147396e-07,
         }
         for joint_name, value in extra_defaults.items():
