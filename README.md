@@ -274,10 +274,20 @@ Replay a previously recorded episode to verify data quality or debug the scene:
 /isaac-sim/python.sh lerobot/scripts/control_robot.py \
     --robot.type=walker_s2_sim \
     --control.type=replay \
+    --control.task=Part_Sorting \
+    --control.root=/workspace/GlobalHumanoidRobotChallenge2026_Baseline/datasets/Part_Sorting/part_sorting_001 \
+    --control.repo_id=alpha/jay-part_sorting_001 \
+    --control.episode=0 \
+    --control.fps=30 \
+    --control.play_sounds=false
+
+/isaac-sim/python.sh lerobot/scripts/control_robot.py \
+    --robot.type=walker_s2_sim \
+    --control.type=replay \
     --control.task=Packing_Box \
-    --control.root=./challenge2026_dataset/Packing_Box/v1 \
+    --control.root=/workspace/GlobalHumanoidRobotChallenge2026_Baseline/datasets/Packing_Box/box_closing_001 \
     --control.repo_id=your_org/task4 \
-    --control.episode=10 \
+    --control.episode=0 \
     --control.fps=30 \
     --control.play_sounds=false
 ```
@@ -290,6 +300,12 @@ Replay a previously recorded episode to verify data quality or debug the scene:
 | `control.episode`     | Episode index to replay (0-based)                    | required        |
 | `control.fps`         | Replay frame rate                                    | `30`          |
 | `control.play_sounds` | Play audio cues                                      | `false`       |
+
+#### Keyboard Controls
+
+| Key     | Action                                   |
+| ------- | ---------------------------------------- |
+| `enter` | Start episode replay       |
 
 ### 5. Training
 
